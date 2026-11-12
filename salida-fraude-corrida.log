@@ -1,0 +1,72 @@
+datos cargados: (699960, 26) (299984, 25) (299984, 2) 2s
+  pliegue 1/5 (crudas): AUC = 0.9428
+  pliegue 2/5 (crudas): AUC = 0.9471
+  pliegue 3/5 (crudas): AUC = 0.9498
+  pliegue 4/5 (crudas): AUC = 0.9451
+  pliegue 5/5 (crudas): AUC = 0.9396
+  pliegue 1/5 (senales): AUC = 0.9018
+  pliegue 2/5 (senales): AUC = 0.9097
+  pliegue 3/5 (senales): AUC = 0.9145
+  pliegue 4/5 (senales): AUC = 0.9109
+  pliegue 5/5 (senales): AUC = 0.9006
+  pliegue 1/5 (combinadas): AUC = 0.9424
+  pliegue 2/5 (combinadas): AUC = 0.9462
+  pliegue 3/5 (combinadas): AUC = 0.9495
+  pliegue 4/5 (combinadas): AUC = 0.9455
+  pliegue 5/5 (combinadas): AUC = 0.9406
+comparación: {
+ "crudas": {
+  "modo": "crudas",
+  "aucs": [
+   0.9428,
+   0.9471,
+   0.9498,
+   0.9451,
+   0.9396
+  ],
+  "auc_media": 0.9449,
+  "auc_std": 0.0035,
+  "n_pliegues": 5
+ },
+ "senales": {
+  "modo": "senales",
+  "aucs": [
+   0.9018,
+   0.9097,
+   0.9145,
+   0.9109,
+   0.9006
+  ],
+  "auc_media": 0.9075,
+  "auc_std": 0.0054,
+  "n_pliegues": 5
+ },
+ "combinadas": {
+  "modo": "combinadas",
+  "aucs": [
+   0.9424,
+   0.9462,
+   0.9495,
+   0.9455,
+   0.9406
+  ],
+  "auc_media": 0.9448,
+  "auc_std": 0.0031,
+  "n_pliegues": 5
+ },
+ "baseline_constante": {
+  "modo": "baseline_constante",
+  "auc_media": 0.5,
+  "auc_std": 0.0,
+  "aucs": [
+   0.5,
+   0.5,
+   0.5,
+   0.5,
+   0.5
+  ]
+ }
+}
+envío: {'ruta': 'salida-fraude/submission.csv', 'n_filas': 299984, 'checks_ok': 7, 'checks_total': 7, 'checks_fallidos': [], 'media_prob': 0.0166}
+TIEMPO TOTAL: 767s
+resultados.pkl guardado

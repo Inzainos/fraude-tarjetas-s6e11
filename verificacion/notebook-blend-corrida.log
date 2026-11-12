@@ -1,0 +1,74 @@
+Ejecutando 7 celdas de código de /home/hatch/workspace/fraude-tarjetas-s6e11/fraude-tarjetas-blend.ipynb
+
+===== celda 1/7 =====
+Módulo en: .
+Datos en: datos
+Adaptador v1.0.0 cargado.
+train: (699960, 26) | test: (299984, 25) | sample: (299984, 2)
+tasa de fraude en train: 0.0167
+nulos train: 0 | nulos test: 0
+(celda 1 en 3.4s)
+
+===== celda 2/7 =====
+X_tr crudas: (699960, 54) | X_te crudas: (299984, 54)
+columnas crudas: 54
+(celda 2 en 3.4s)
+
+===== celda 3/7 =====
+  hgb_base_s42 : checkpoint reutilizado
+  hgb_base_s1 : checkpoint reutilizado
+  hgb_base_s7 : checkpoint reutilizado
+  hgb_g5_s42 : checkpoint reutilizado
+  hgb_g5_s1 : checkpoint reutilizado
+  hgb_g5_s7 : checkpoint reutilizado
+  lgbm_s42 : checkpoint reutilizado
+  lgbm_s1 : checkpoint reutilizado
+  lgbm_s7 : checkpoint reutilizado
+9 GBM crudas listas.
+(celda 3 en 0.1s)
+
+===== celda 4/7 =====
+  logreg : checkpoint reutilizado
+logreg lista.
+Modelos en el blend hasta ahora: 10
+(celda 4 en 1.1s)
+
+===== celda 5/7 =====
+Xc_tr combinadas: (699960, 72) | Xc_te combinadas: (299984, 72)
+  hgb_g5_comb_s42 : checkpoint reutilizado
+  hgb_g5_comb_s1 : checkpoint reutilizado
+  lgbm_comb_s42 : checkpoint reutilizado
+  lgbm_comb_s1 : checkpoint reutilizado
+4 GBM combinadas listas. Modelos en el blend: 14
+(celda 5 en 2.7s)
+
+===== celda 6/7 =====
+blend: media 0.0166 | min 0.0 | max 0.9956
+OK   - columnas_exactas - columnas: ['id', 'is_fraud']
+OK   - n_filas - 299984 vs 299984
+OK   - mismos_ids - ids de test
+OK   - mismo_orden_ids - orden idéntico a sample_submission.csv
+OK   - sin_nan - NaN: 0
+OK   - prob_en_0_1 - min=0.0000 max=0.9956
+OK   - sin_duplicados_id - duplicados: 0
+submission_blend.csv escrito: 299984 filas
+(celda 6 en 0.7s)
+
+===== celda 7/7 =====
+OOF mixto_todos: [0.9448, 0.9481, 0.9512, 0.9466, 0.9416] media 0.9465 +- 0.0032 | agrupado 0.9464
+Esperado: [0.9448, 0.9481, 0.9512, 0.9466, 0.9416] media 0.9465 +- 0.0032 | agrupado 0.9464
+vs v1: Pearson 0.9841 | Spearman 0.9841 | diferencia media abs 0.0029
+v1 media 0.0166 | blend media 0.0166
+correlación miembros vs v1: Pearson mediana 0.966 | Spearman mediana 0.9755
+OK   - train 699,960 x 26
+OK   - test 299,984 x 25
+OK   - 14 miembros entrenados
+OK   - OOF reproduce 0.9465 +- 0.0032
+OK   - submission: todos los checks OK
+OK   - v1 intacta (md5 c07bfd80...)
+OK   - blend supera mediana de miembros vs v1
+7/7 verificaciones PASS
+blend.json escrito. Veredicto: LISTO
+(celda 7 en 2.3s)
+
+Notebook completo en 13.7s

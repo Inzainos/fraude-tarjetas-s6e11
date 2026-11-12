@@ -1,0 +1,25 @@
+== Ajuste ligero — Kaggle S6E11 fraude con tarjeta ==
+sklearn 1.9.1
+lightgbm 4.7.0 (instalado por pip 2026-11-08)
+memoria disponible al inicio: 541 MB
+train (699960, 26), test (299984, 25), sample (299984, 2)
+
+== 1. Rejilla HistGradientBoosting (modo combinadas) ==
+-- base: {'max_iter': 200, 'learning_rate': 0.08, 'max_leaf_nodes': 31, 'min_samples_leaf': 50, 'l2_regularization': 1.0} (mem 502 MB)
+    pliegue 1/5: AUC = 0.9424
+    pliegue 2/5: AUC = 0.9462
+    pliegue 3/5: AUC = 0.9495
+    pliegue 4/5: AUC = 0.9455
+    pliegue 5/5: AUC = 0.9406
+   calibración (diagnóstico, no mueve AUC): {'log_loss': 0.0464, 'brier': 0.0112, 'media_predicha': 0.0166, 'media_observada': 0.0167, 'pendiente_calibracion': 0.9954, 'intercepto_calibracion': -0.0038, 'nota': 'Diagnóstico únicamente: calibrar las probabilidades NO mueve el ROC AUC (invariante a transformaciones monótonas del puntaje). Pendiente 1.0 e intercepto 0.0 = calibrado.'}
+   base: 0.9448 ± 0.0031 [0.9424, 0.9462, 0.9495, 0.9455, 0.9406]
+-- g1_lr05_l31_ml20_l2.1_it300: {'max_iter': 300, 'learning_rate': 0.05, 'max_leaf_nodes': 31, 'min_samples_leaf': 20, 'l2_regularization': 0.1} (mem 1472 MB)
+    pliegue 1/5: AUC = 0.9427
+    pliegue 2/5: AUC = 0.9462
+    pliegue 3/5: AUC = 0.9494
+    pliegue 4/5: AUC = 0.9454
+    pliegue 5/5: AUC = 0.9407
+   g1_lr05_l31_ml20_l2.1_it300: 0.9449 ± 0.0030 [0.9427, 0.9462, 0.9494, 0.9454, 0.9407]
+-- g2_lr05_l63_ml20_l2.1_it300: {'max_iter': 300, 'learning_rate': 0.05, 'max_leaf_nodes': 63, 'min_samples_leaf': 20, 'l2_regularization': 0.1} (mem 1461 MB)
+    pliegue 1/5: AUC = 0.9420
+    pliegue 2/5: AUC = 0.9458

@@ -1,0 +1,26 @@
+externo: (20000, 26), fraude 0.0169, nulos 0
+submission actual md5: c07bfd803b2704a13ec7f7d2afff7bd8
+
+== Comparación con externo (CV 5 pliegues, validación solo competencia) ==
+Mejor sin externo: crudas 0.9449
+crudas      con externo 0.9449 ± 0.0036  sin externo 0.9449 ± 0.0035  Δ vs mejor sin externo +0.0000
+senales     con externo 0.9074 ± 0.0053  sin externo 0.9075 ± 0.0054  Δ vs mejor sin externo -0.0375
+combinadas  con externo 0.9448 ± 0.0034  sin externo 0.9448 ± 0.0031  Δ vs mejor sin externo -0.0001
+Veredicto: NO AYUDA: ninguna variante con externo supera al mejor sin externo (0.9449) por más de la std entre pliegues; el externo se descarta como datos extra (se documenta, no se usa).
+
+El externo NO gana: submission actual intacto.
+comparacion_externo.json escrito.
+OK    - externo 20000x26 - (20000, 26)
+OK    - externo cero nulos - 0
+OK    - externo tasa fraude 0.0169 (339) - 0.0169 / 339
+OK    - externo cambio distribución: monto medio 132.42 vs 79.89 - 132.42 vs 79.89
+OK    - externo sin auth 0.0444 vs train 0.0644 - 0.0444 vs 0.0644
+OK    - externo intento IA 0.0907 vs train 0.1522 - 0.0907 vs 0.1522
+OK    - externo CV crudas: con 0.9449 ± 0.0036 vs sin 0.9449 ± 0.0035 - con [0.9427, 0.9469, 0.9499, 0.9454, 0.9393] / sin [0.9428, 0.9471, 0.9498, 0.9451, 0.9396]
+OK    - externo CV senales: con 0.9074 ± 0.0053 vs sin 0.9075 ± 0.0054 - con [0.9022, 0.9093, 0.9142, 0.9111, 0.9003] / sin [0.9018, 0.9097, 0.9145, 0.9109, 0.9006]
+OK    - externo CV combinadas: con 0.9448 ± 0.0034 vs sin 0.9448 ± 0.0031 - con [0.9428, 0.9465, 0.9494, 0.9456, 0.9395] / sin [0.9424, 0.9462, 0.9495, 0.9455, 0.9406]
+OK    - externo decisión documentada (modo_ganador + veredicto) - ganador=None / NO AYUDA: ninguna variante con externo supera al mejor sin e...
+OK    - externo descartado: submission intacto (md5 igual) - c07bfd803b27
+verificacion-fraude.json: 50/50 OK, fallos: []
+TIEMPO TOTAL: 1363s
+COMPARACIÓN COMPLETADA

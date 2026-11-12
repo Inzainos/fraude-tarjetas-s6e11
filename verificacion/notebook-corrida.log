@@ -1,0 +1,129 @@
+Ejecutando 6 celdas de código de fraude-tarjetas.ipynb
+
+===== celda 1/6 =====
+Módulo en: .
+Datos en: datos
+Adaptador v1.0.0 cargado.
+train: (699960, 26) | test: (299984, 25) | sample: (299984, 2)
+tasa de fraude en train: 0.0167
+nulos train: 0 | nulos test: 0
+(celda 1 en 3.0s)
+
+===== celda 2/6 =====
+== Conteo de señales de riesgo: tasa de fraude por conteo ==
+ n_distinct_risk_signals      n  fraude     tasa
+                       0 373315   715.0 0.001915
+                       1 241861  2574.0 0.010642
+                       2  69307  3745.0 0.054035
+                       3  12692  2840.0 0.223763
+                       4   2236  1334.0 0.596601
+                       5    459   392.0 0.854031
+                       6     81    80.0 0.987654
+                       7      8     8.0 1.000000
+                       8      1     1.0 1.000000
+
+Umbral >= 5 señales: 549 txns (0.08% del total), tasa de fraude 87.61% vs 1.60% sin llegar al umbral; captura 481 de 11689 fraudes (4.1%), lift 52.46x
+Variante sin distancia: {'n_umbral': 388, 'tasa_umbral': 0.9407, 'pct_fraudes_capturados': 3.1}
+
+== Cuota de fraude por merchant_category (cuota = fraude/(total-fraude)) ==
+merchant_category      n  fraude  cuota_fraude  cuota_fraude_n_pct  cuota_fraude_usd_pct nivel_concentracion
+       Gift Cards   9456   690.0      0.078713            5.902986              1.963830             Nivel 1
+  Crypto Exchange   5285   345.0      0.069838            2.951493             10.909970             Nivel 2
+           Gaming  23784  1311.0      0.058337           11.215673              3.359529             Nivel 0
+      Electronics  48693  1501.0      0.031806           12.841133             46.895849             Nivel 0
+        Streaming  47196  1061.0      0.022998            9.076910              1.086835             Nivel 1
+           Travel  28715   534.0      0.018949            4.568398             21.416586             Nivel 1
+        Utilities  42027   581.0      0.014018            4.970485              1.249329             Nivel 1
+       Healthcare  35889   462.0      0.013041            3.952434              1.086658             Nivel 1
+             Fuel  59880   741.0      0.012530            6.339293              1.489742             Nivel 1
+      Restaurants 101360  1159.0      0.011567            9.915305              2.745875             Nivel 1
+        Groceries 142578  1585.0      0.011242           13.559757              3.745195             Nivel 0
+    Online Retail 155097  1719.0      0.011208           14.706134              4.050601             Nivel 0
+
+== Cuota de fraude por channel ==
+    channel      n  fraude  cuota_fraude  cuota_fraude_n_pct
+     Online 273939  4773.0      0.017733           40.833262
+        POS 206465  3428.0      0.016884           29.326717
+     In-App  83716  1367.0      0.016600           11.694756
+        ATM  30220   480.0      0.016140            4.106425
+Contactless 105620  1641.0      0.015782           14.038840
+
+== Autenticación por auth_method ==
+      auth_method      n  fraude     tasa  cuota_fraude_pct  cuota_txn_pct              auth
+No Authentication  67060  4322.0 0.064450         36.974934       9.580547 Sin autenticación
+        3D Secure 210036  3098.0 0.014750         26.503550      30.006858 Con autenticación
+              OTP 175178  2464.0 0.014066         21.079648      25.026859 Con autenticación
+              PIN 154020  1337.0 0.008681         11.438104      22.004115 Con autenticación
+        Biometric  93666   468.0 0.004996          4.003764      13.381622 Con autenticación
+(celda 2 en 0.5s)
+
+===== celda 3/6 =====
+serie temporal: datos_insuficientes
+Razón: No hay serie temporal real por entidad: no hay fecha, ni id de tarjeta, ni id de comercio. El id es solo orden de fila y NO es temporal.
+Evidencia: {'corr_id_hora': -0.002, 'corr_id_dia': 0.0005, 'corr_id_fraude': -0.0006, 'tasa_fraude_por_decil_id_min': 0.0159, 'tasa_fraude_por_decil_id_max': 0.0173, 'hora_media_por_decil_id_min': 11.72, 'hora_media_por_decil_id_max': 11.79, 'dia_medio_por_decil_id_min': 2.97, 'dia_medio_por_decil_id_max': 2.99}
+Faltantes:
+ - columna de fecha u orden temporal real (time_of_day_hour y day_of_week son cíclicos, no una línea de tiempo)
+ - id de tarjeta (no hay tarjeta que seguir en el tiempo)
+ - id de comercio (no hay comercio que seguir en el tiempo)
+ - serie temporal por entidad con n>=8 para ajustar una tendencia temporal (log-log)
+Figuras: ['fig-conteo-senales.png', 'fig-cuota-fraude-categoria.png', 'fig-auth.png']
+ - salida-fraude/fig-conteo-senales.png
+ - salida-fraude/fig-cuota-fraude-categoria.png
+ - salida-fraude/fig-auth.png
+(celda 3 en 1.6s)
+
+===== celda 4/6 =====
+  pliegue 1/5 (crudas): AUC = 0.9428
+  pliegue 2/5 (crudas): AUC = 0.9471
+  pliegue 3/5 (crudas): AUC = 0.9498
+  pliegue 4/5 (crudas): AUC = 0.9451
+  pliegue 5/5 (crudas): AUC = 0.9396
+  pliegue 1/5 (senales): AUC = 0.9018
+  pliegue 2/5 (senales): AUC = 0.9097
+  pliegue 3/5 (senales): AUC = 0.9145
+  pliegue 4/5 (senales): AUC = 0.9109
+  pliegue 5/5 (senales): AUC = 0.9006
+  pliegue 1/5 (combinadas): AUC = 0.9424
+  pliegue 2/5 (combinadas): AUC = 0.9462
+  pliegue 3/5 (combinadas): AUC = 0.9495
+  pliegue 4/5 (combinadas): AUC = 0.9455
+  pliegue 5/5 (combinadas): AUC = 0.9406
+crudas      AUC media 0.9449 ± 0.0035  pliegues [0.9428, 0.9471, 0.9498, 0.9451, 0.9396]
+senales     AUC media 0.9075 ± 0.0054  pliegues [0.9018, 0.9097, 0.9145, 0.9109, 0.9006]
+combinadas  AUC media 0.9448 ± 0.0031  pliegues [0.9424, 0.9462, 0.9495, 0.9455, 0.9406]
+baseline constante: AUC 0.5
+(celda 4 en 678.1s)
+
+===== celda 5/6 =====
+PENDIENTE: el dataset original CC0 no está en datos/.
+Se descarga con sesión de Kaggle (dataset público) a datos/credit-card-fraud-detection-2026.csv y esta celda corre sola la comparación.
+Hasta entonces: NO se usa ningún dato externo.
+(celda 5 en 0.0s)
+
+===== celda 6/6 =====
+OK   - columnas_exactas - columnas: ['id', 'is_fraud']
+OK   - n_filas - 299984 vs 299984
+OK   - mismos_ids - ids de test
+OK   - mismo_orden_ids - orden idéntico a sample_submission.csv
+OK   - sin_nan - NaN: 0
+OK   - prob_en_0_1 - min=0.0000 max=0.9979
+OK   - sin_duplicados_id - duplicados: 0
+Media de probabilidad predicha: 0.0166 (base 0.0167)
+Informe escrito en salida-fraude/informe-fraude.md
+OK   - train 699,960 x 26
+OK   - test 299,984 x 25
+OK   - sample 299,984 x 2
+OK   - tasa fraude train 0.0167
+OK   - cero nulos train/test
+FAIL - conteo de señales: tasa crece monótona con el conteo
+OK   - umbral >= 5 señales: tasa > 0.80
+OK   - cuota Gift Cards 0.0787
+OK   - auth No Authentication 0.0644
+OK   - temporal: datos_insuficientes
+OK   - CV: 3 modos con AUC > 0.5
+OK   - submission: todos los checks OK
+
+11/12 verificaciones PASS
+(celda 6 en 95.7s)
+
+Notebook completo en 778.9s
