@@ -1,22 +1,23 @@
 # Fraude Tarjetas S6E11 - dependencias del pipeline de modelado.
 #
-# Versiones tomadas de AGENTS.md ("Entorno (esta caja)", verificadas el
-# 2026-11-09 en la caja Kali) y de verificacion/ajuste-ligero-corrida.log
-# (lightgbm 4.7.0). Intérprete de referencia: Python 3.12.3.
+# Pines medidos en el venv de la Kali (/home/deamon/.venv-fraude) el
+# 2026-11-26 con verificar_entorno.py (rama requirements, decisión de
+# Elán: actualizar los pines al venv). Intérprete: Python 3.13.15.
+# Los pines anteriores (numpy 1.26.4, pandas 2.1.4, scipy 1.11.4,
+# Python 3.12.3) eran de AGENTS.md, verificados el 2026-11-09; el venv
+# derivó de ellos sin mover los números: el control A@400 de ensamble-v2b
+# reproduce el glm_lgb4 de v2 con dif máxima 5e-06 (OOF 0.95064 exacto).
 #
-#   python3.12 -m venv .venv && . .venv/bin/activate
+#   python3.13 -m venv .venv && . .venv/bin/activate
 #   pip install -r requirements.txt
 #   python3 verificar_entorno.py
-#
-# NO actualizar numpy a 2.x: la caja usa 1.26.4 y las corridas verificadas
-# (CV 0.95066 / publico 0.95112) se hicieron con este conjunto.
 #
 # Usan estos paquetes: fraude_tarjetas.py, ensamble.py, ensamble_v2.py,
 # ensamble_v2b.py, ensamble_v3.py, final_blend_v2.py, stack_publico.py,
 # medir_stacking_blend.py y verificacion/*.py (ramas del repo).
 
-numpy==1.26.4
-pandas==2.1.4
-scipy==1.11.4
+numpy==2.2.6
+pandas==2.3.3
+scipy==1.16.3
 scikit-learn==1.6.1
 lightgbm==4.7.0

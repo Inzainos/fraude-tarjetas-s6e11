@@ -19,7 +19,7 @@ import sys
 from importlib import metadata
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-PYTHON_REFERENCIA = (3, 12)
+PYTHON_REFERENCIA = (3, 13)
 log = logging.getLogger("entorno")
 
 
