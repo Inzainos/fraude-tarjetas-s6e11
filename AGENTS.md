@@ -20,9 +20,10 @@ Chat experto: "Qué es la entropía" (61e8d7ad). Coordinador: chat
    §11 del informe, en términos neutros. Verificar con grep antes de
    entregar.
 3. **Nada a Kaggle sin decisión de Elán.** Ningún envío, ningún cambio
-   de selección final (finales: consultor v2 0.95112 ref 58917706 + v4
-   0.94723 ref 58607873, cambiadas por Elán 2026-11-25 18:46; la v3
-   0.94691 quedó fuera), ningún notebook/dataset público.
+   de selección final (finales: consultor v2 0.95112 ref 58917706 + blend
+   ponderado v2 0.95119 ref 58925302, cambiadas 2026-11-25 21:59 por GO
+   de Elán; la v4 0.94723 ref 58607873 quedó fuera), ningún
+   notebook/dataset público.
 4. **GitHub — regla actualizada por orden de Elán 2026-11-25 19:55
    ("Actualiza todo en guthub").** Remote: origin
    https://github.com/Inzainos/fraude-tarjetas-s6e11.git. Ramas: main @
