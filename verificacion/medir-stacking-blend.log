@@ -1,0 +1,22 @@
+2026-11-25 18:51:28,273 filas 699960 fraude 0.01670
+2026-11-25 18:51:44,639 blend_nested pliegue 1/5 pesos=[0.6667, 0.0833, 0.25, 0.0] auc=0.94989
+2026-11-25 18:52:00,750 blend_nested pliegue 2/5 pesos=[0.7273, 0.0909, 0.1818, 0.0] auc=0.95118
+2026-11-25 18:52:17,408 blend_nested pliegue 3/5 pesos=[0.7, 0.1, 0.2, 0.0] auc=0.95574
+2026-11-25 18:52:33,681 blend_nested pliegue 4/5 pesos=[0.6364, 0.1818, 0.1818, 0.0] auc=0.95140
+2026-11-25 18:52:49,932 blend_nested pliegue 5/5 pesos=[0.6667, 0.1111, 0.2222, 0.0] auc=0.94541
+2026-11-25 18:52:50,071 blend_pond_nested  media 0.95072 | Δ pareado +0.00407 | +5/5 | gana=True
+2026-11-25 18:53:09,014 blend_pond_global  media 0.95073 | Δ pareado +0.00408 | +5/5 | gana=True
+2026-11-25 18:53:09,014 blend_global pesos=[0.7, 0.1, 0.2, 0.0] media=0.95073
+2026-11-25 18:53:10,121 stack_lr pliegue 1/5 auc=0.94922
+2026-11-25 18:53:10,692 stack_lr pliegue 2/5 auc=0.95127
+2026-11-25 18:53:11,360 stack_lr pliegue 3/5 auc=0.95514
+2026-11-25 18:53:12,160 stack_lr pliegue 4/5 auc=0.95098
+2026-11-25 18:53:12,904 stack_lr pliegue 5/5 auc=0.94525
+2026-11-25 18:53:13,036 stack_lr           media 0.95037 | Δ pareado +0.00372 | +5/5 | gana=True
+2026-11-25 18:53:13,662 stack_lr_rank pliegue 1/5 auc=0.94909
+2026-11-25 18:53:14,397 stack_lr_rank pliegue 2/5 auc=0.95133
+2026-11-25 18:53:15,230 stack_lr_rank pliegue 3/5 auc=0.95501
+2026-11-25 18:53:15,982 stack_lr_rank pliegue 4/5 auc=0.95077
+2026-11-25 18:53:16,598 stack_lr_rank pliegue 5/5 auc=0.94519
+2026-11-25 18:53:16,728 stack_lr_rank      media 0.95028 | Δ pareado +0.00363 | +5/5 | gana=True
+2026-11-25 18:53:16,729 listo en 109s

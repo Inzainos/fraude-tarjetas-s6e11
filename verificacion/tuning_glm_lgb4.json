@@ -1,0 +1,117 @@
+{
+  "protocolo": "StratifiedKFold(5, shuffle, 42); TE anidado + GLM init compartidos por pliegue; regla nuestra vs lgb4_raw",
+  "lgb4_raw_media": 0.94665,
+  "A_control_media": 0.95066,
+  "modelos": {
+    "lgb4_raw": {
+      "aucs_por_pliegue": [
+        0.94489,
+        0.94816,
+        0.95124,
+        0.94707,
+        0.9419
+      ],
+      "auc_media": 0.94665,
+      "auc_std": 0.00314,
+      "auc_oof_agrupado": 0.94663,
+      "delta_pareado_vs_lgb4_raw": 0.0,
+      "delta_std": 0.0,
+      "positivo_en_pliegues": 0,
+      "delta_vs_A_control": -0.00401,
+      "gana_regla_nuestra": false,
+      "supera_A_control": false
+    },
+    "A_control": {
+      "aucs_por_pliegue": [
+        0.94985,
+        0.95105,
+        0.95567,
+        0.95138,
+        0.94537
+      ],
+      "auc_media": 0.95066,
+      "auc_std": 0.0033,
+      "auc_oof_agrupado": 0.95064,
+      "delta_pareado_vs_lgb4_raw": 0.00401,
+      "delta_std": 0.00074,
+      "positivo_en_pliegues": 5,
+      "delta_vs_A_control": 0.0,
+      "gana_regla_nuestra": true,
+      "supera_A_control": false
+    },
+    "B_fino": {
+      "aucs_por_pliegue": [
+        0.94983,
+        0.95107,
+        0.95578,
+        0.95131,
+        0.94539
+      ],
+      "auc_media": 0.95068,
+      "auc_std": 0.00332,
+      "auc_oof_agrupado": 0.95065,
+      "delta_pareado_vs_lgb4_raw": 0.00403,
+      "delta_std": 0.00073,
+      "positivo_en_pliegues": 5,
+      "delta_vs_A_control": 1e-05,
+      "gana_regla_nuestra": true,
+      "supera_A_control": false
+    },
+    "C_mas_boost": {
+      "aucs_por_pliegue": [
+        0.94958,
+        0.95097,
+        0.9557,
+        0.9515,
+        0.94525
+      ],
+      "auc_media": 0.9506,
+      "auc_std": 0.00336,
+      "auc_oof_agrupado": 0.95056,
+      "delta_pareado_vs_lgb4_raw": 0.00395,
+      "delta_std": 0.00073,
+      "positivo_en_pliegues": 5,
+      "delta_vs_A_control": -7e-05,
+      "gana_regla_nuestra": true,
+      "supera_A_control": false
+    },
+    "D_mas_hojas": {
+      "aucs_por_pliegue": [
+        0.94966,
+        0.9508,
+        0.95554,
+        0.95146,
+        0.94542
+      ],
+      "auc_media": 0.95058,
+      "auc_std": 0.00325,
+      "auc_oof_agrupado": 0.95054,
+      "delta_pareado_vs_lgb4_raw": 0.00392,
+      "delta_std": 0.00076,
+      "positivo_en_pliegues": 5,
+      "delta_vs_A_control": -9e-05,
+      "gana_regla_nuestra": true,
+      "supera_A_control": false
+    },
+    "E_mas_reg": {
+      "aucs_por_pliegue": [
+        0.94974,
+        0.95101,
+        0.9557,
+        0.95134,
+        0.94536
+      ],
+      "auc_media": 0.95063,
+      "auc_std": 0.00331,
+      "auc_oof_agrupado": 0.9506,
+      "delta_pareado_vs_lgb4_raw": 0.00398,
+      "delta_std": 0.00072,
+      "positivo_en_pliegues": 5,
+      "delta_vs_A_control": -3e-05,
+      "gana_regla_nuestra": true,
+      "supera_A_control": false
+    }
+  },
+  "tiempo_s": 762.3,
+  "filas": 699960
+}
