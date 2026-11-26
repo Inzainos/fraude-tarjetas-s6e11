@@ -260,3 +260,12 @@ Historial verificado del proyecto. Fechas en hora central (CST).
   `verificacion/VEREDICTO_CONSULTOR_2026-11-25.md`. GitHub (orden
   Elán 19:55): commit en la línea local + bundle nuevo para el push
   --force a local/fraude-2026-11-25 desde Katana; main NO se toca.
+
+## 2026-11-25 (noche) — 2026-11-26
+
+- **Finales cambiadas por Elán 2026-11-25 21:59: blend ponderado v2 (0.95119) + consultor v2 (0.95112).** Blend ponderado anidado (CV 0.95072, empate) dio público 0.95119 en Kaggle (ref 58925302); consultor v2 0.95112 (ref 58917706). La v4 (0.94723) y la v3 quedan fuera.
+- **Notebook del blend v2 verificado byte por byte (2026-11-26 ~05:30):** `fraude-tarjetas-v2-blend.ipynb` (23,993 B, md5 58c013e2…) — copia de la rama == archivo local, diff 0 líneas.
+- **Prueba de 4 ramas (Kali, 2026-11-26 03:28–05:22):** ensamble-v2 corre sin mejora (su blend_rank es rangos, media 0.50000; glm_lgb4 0.95066 / OOF 0.95064 es la fuente del 0.95112); ensamble-v3 corre sin mejora (mejor candidato +0.00013 ± 0.00015, ruido); final-blend-v2 reproduce el 0.95112 exacto (Spearman 1.00000); stack-publico no corre (faltan los .npy de GPT-2; HuggingFace 401, sin kaggle.json en la Kali). Detalle en `verificacion/RESUMEN_4_RAMAS.md`.
+- **ensamble-v2b (Kali, 2026-11-26 07:07–07:16, 580 s):** corre sin mejora. Control A@400 reproduce glm_lgb4 de v2 a 5e-06 (OOF 0.95064 exacto); curvas planas (A k*=300, B k*=1000); candidatos A_kstar +0.00001 (2/5), B_400 +0.00003 (3/5), B_kstar +0.00004 (3/5) — ninguno cumple la regla (5/5, media ≥ +0.0001, media > 2× std); `--final` no escribe submission. Detalle en `verificacion/RESUMEN_V2B.md`.
+- **Pines actualizados al venv (decisión de Elán 2026-11-26 07:36):** rama requirements, commit aa1a89b9 — numpy 2.2.6, pandas 2.3.3, scipy 1.16.3, Python 3.13.15; verificar_entorno.py PYTHON_REFERENCIA (3,13). Verificador en la Kali: exit 0, 5/5 pines OK. La deriva del venv no movió números (control v2b dif 5e-06).
+- **Re-corrida v2b (Kali, 2026-11-26 07:43–07:52, 573 s):** REPRODUCE EXACTO — npz byte-idéntico al primero (md5 ec418acd…), json solo difiere en tiempo_s (579.1 vs 572.1 s); ningún candidato pasa; sin submission. Detalle en `verificacion/RESUMEN_V2B_RERUN.md`.

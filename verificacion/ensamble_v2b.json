@@ -1,0 +1,86 @@
+{
+  "protocolo": "StratifiedKFold(5, shuffle, 42), TE anidado semilla 17",
+  "control": "A@400",
+  "curvas_auc_media": {
+    "A": {
+      "200": 0.95063,
+      "300": 0.95067,
+      "400": 0.95066,
+      "500": 0.95062,
+      "600": 0.95061,
+      "800": 0.9506,
+      "1000": 0.95055,
+      "1200": 0.95047
+    },
+    "B": {
+      "200": 0.95066,
+      "300": 0.95069,
+      "400": 0.9507,
+      "500": 0.95069,
+      "600": 0.95068,
+      "800": 0.95069,
+      "1000": 0.9507,
+      "1200": 0.95063
+    }
+  },
+  "candidatos": {
+    "A_kstar": {
+      "variante": "A",
+      "k": 300,
+      "aucs_por_pliegue": [
+        0.94985,
+        0.95107,
+        0.95572,
+        0.95136,
+        0.94536
+      ],
+      "auc_media": 0.95067,
+      "auc_std": 0.00332,
+      "delta_pareado_vs_A400": 1e-05,
+      "delta_std": 3e-05,
+      "positivo_en_pliegues": 2,
+      "cumple_regla_adopcion": false
+    },
+    "B_400": {
+      "variante": "B",
+      "k": 400,
+      "aucs_por_pliegue": [
+        0.94985,
+        0.95096,
+        0.95574,
+        0.95146,
+        0.94549
+      ],
+      "auc_media": 0.9507,
+      "auc_std": 0.00328,
+      "delta_pareado_vs_A400": 3e-05,
+      "delta_std": 7e-05,
+      "positivo_en_pliegues": 3,
+      "cumple_regla_adopcion": false
+    },
+    "B_kstar": {
+      "variante": "B",
+      "k": 1000,
+      "aucs_por_pliegue": [
+        0.9498,
+        0.95092,
+        0.95571,
+        0.95161,
+        0.94547
+      ],
+      "auc_media": 0.9507,
+      "auc_std": 0.00329,
+      "delta_pareado_vs_A400": 4e-05,
+      "delta_std": 0.00012,
+      "positivo_en_pliegues": 3,
+      "cumple_regla_adopcion": false
+    }
+  },
+  "control_vs_v2_max_dif": 5e-06,
+  "k_estrella": {
+    "A": 300,
+    "B": 1000
+  },
+  "tiempo_s": 579.1,
+  "filas": 699960
+}
