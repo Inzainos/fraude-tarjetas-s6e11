@@ -1,0 +1,16 @@
+# Fraude Tarjetas S6E11 - dependencias SOLO para el informe y los notebooks.
+# No hacen falta para entrenar, validar ni generar submissions.
+#
+#   pip install -r requirements.txt -r requirements-informe.txt
+#
+# matplotlib: figuras del informe (fraude_tarjetas.py, backend Agg).
+# nbformat:   verificacion/construir_notebook*.py (los notebooks se ejecutan
+#             celda por celda con verificacion/correr_notebook*.py, sin jupyter).
+#
+# AGENTS.md no registra las versiones de estos dos paquetes en la caja, asi
+# que aqui van con cota inferior en vez de un pin inventado. Si quieres
+# fijarlos, corre `pip freeze | grep -iE "matplotlib|nbformat"` en la caja
+# y reemplaza estas lineas por los valores reales.
+
+matplotlib>=3.8
+nbformat>=5.9

@@ -1,0 +1,22 @@
+# Fraude Tarjetas S6E11 - dependencias del pipeline de modelado.
+#
+# Versiones tomadas de AGENTS.md ("Entorno (esta caja)", verificadas el
+# 2026-11-09 en la caja Kali) y de verificacion/ajuste-ligero-corrida.log
+# (lightgbm 4.7.0). Intérprete de referencia: Python 3.12.3.
+#
+#   python3.12 -m venv .venv && . .venv/bin/activate
+#   pip install -r requirements.txt
+#   python3 verificar_entorno.py
+#
+# NO actualizar numpy a 2.x: la caja usa 1.26.4 y las corridas verificadas
+# (CV 0.95066 / publico 0.95112) se hicieron con este conjunto.
+#
+# Usan estos paquetes: fraude_tarjetas.py, ensamble.py, ensamble_v2.py,
+# ensamble_v2b.py, ensamble_v3.py, final_blend_v2.py, stack_publico.py,
+# medir_stacking_blend.py y verificacion/*.py (ramas del repo).
+
+numpy==1.26.4
+pandas==2.1.4
+scipy==1.11.4
+scikit-learn==1.6.1
+lightgbm==4.7.0
